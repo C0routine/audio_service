@@ -598,6 +598,11 @@ public class AudioService extends MediaBrowserServiceCompat {
         }
     }
 
+    public void exitAndroidService() {
+        ServiceCompat.stopForeground(this, STOP_FOREGROUND_DETACH);
+        releaseWakeLock();
+    }
+
     public int getPlaybackState() {
         switch (processingState) {
         case idle: return PlaybackStateCompat.STATE_NONE;
