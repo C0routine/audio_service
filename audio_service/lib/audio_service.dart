@@ -1228,6 +1228,10 @@ class AudioService {
     );
   }
 
+  static Future<void> exitAndroidService() async {
+    await _platform.exitAndroidService();
+  }
+
   /// Stops the service.
   static Future<void> _stop() async {
     await _platform.stopService(const StopServiceRequest());
