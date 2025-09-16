@@ -56,6 +56,11 @@ class MethodChannelAudioService extends AudioServicePlatform {
   }
 
   @override
+  Future<void> exitAndroidService() async {
+    await handlerChannel.invokeMethod<void>('exitAndroidService');
+  }
+
+  @override
   void setHandlerCallbacks(AudioHandlerCallbacks callbacks) {
     handlerChannel.setMethodCallHandler((call) async {
       return handlerCallbacksCallHandler(callbacks, call);

@@ -72,6 +72,10 @@ abstract class AudioServicePlatform extends PlatformInterface {
         'notifyChildrenChanged() has not been implemented.');
   }
 
+  Future<void> exitAndroidService() async {
+    throw UnimplementedError('exitAndroidService() has not been implemented.');
+  }
+
   void setHandlerCallbacks(AudioHandlerCallbacks callbacks) {
     throw UnimplementedError('setHandlerCallbacks() has not been implemented.');
   }
